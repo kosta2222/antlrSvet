@@ -12,7 +12,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 class Main
 {
-    public static void main (String[] args)
+    public static void main (String[] args) throws Exception
     {
 
 //String input = "public static void main(String[] args) { }";
@@ -46,6 +46,10 @@ class Main
 
                  double result= visitor.visit(tree);
                 System.out.println("Result: " + result);
+                System.out.println("Vvedite vashu zarplatu:");
+                double d=Double.parseDouble(br.readLine());
+                double p=(result*100.0)/d;
+                System.out.println("Result % ot summi zarplati:"+p+"%");
 
 
 
