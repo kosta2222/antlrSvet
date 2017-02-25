@@ -1,9 +1,7 @@
 import org.antlr.v4.runtime.misc.NotNull;
 
 class svetBaseVisitorImpl extends svetBaseVisitor<Double>{
-    double vatsForOursLamp=0;
-    double rub=0;
-    double dni=0;
+
     @Override
     public Double visitInput(@NotNull svetParser.InputContext ctx) {
         return visit(ctx.svet());
@@ -11,21 +9,15 @@ class svetBaseVisitorImpl extends svetBaseVisitor<Double>{
 
     @Override
     public Double visitSvet(@NotNull svetParser.SvetContext ctx) {
-        if(ctx.comp()!=null && ctx.lamp()!=null) {
-            return (visit(ctx.lamp()) + visit(ctx.comp())) * (visit(ctx.rub()) / 1000.0) * visit(ctx.n());
-        }else if(ctx.comp()==null){
-            return (visit(ctx.lamp()) * (visit(ctx.rub()) / 1000.0)) * visit(ctx.n());
-        }
-        else if(ctx.lamp()==null){
-            return (visit(ctx.comp()) * (visit(ctx.rub()) / 1000.0)) * visit(ctx.n());
-        }
-        return null;
+
+            return (visit(ctx.lamp()) + visit(ctx.comp())+visit(ctx.refrig())+visit(ctx.telic())) * (visit(ctx.rub()) / 1000.0) * visit(ctx.n());
+
     }
 
     @Override
     public Double visitToLamp(@NotNull svetParser.ToLampContext ctx) {
         //return super.visitToLamp(ctx);
-        vatsForOursLamp=(visit(ctx.kolvoVat())*visit(ctx.amount()))*visit(ctx.rab());
+        double   vatsForOursLamp=(visit(ctx.kolvoVat())*visit(ctx.amount()))*visit(ctx.rab());
         return vatsForOursLamp;
     }
 
@@ -56,13 +48,13 @@ class svetBaseVisitorImpl extends svetBaseVisitor<Double>{
 
     @Override
     public Double visitToRub(@NotNull svetParser.ToRubContext ctx) {
-        rub=visit(ctx.atom());
+      double  rub=visit(ctx.atom());
         return rub;
     }
 
     @Override
     public Double visitToN(@NotNull svetParser.ToNContext ctx) {
-         dni= visit(ctx.atom());
+       double  dni= visit(ctx.atom());
         return dni;
     }
 
@@ -70,5 +62,15 @@ class svetBaseVisitorImpl extends svetBaseVisitor<Double>{
     public Double visitToComp(@NotNull svetParser.ToCompContext ctx) {
       double  vatsForOursComp=(visit(ctx.kolvoVat())*visit(ctx.amount()))*visit(ctx.rab());
         return vatsForOursComp;
+    }
+
+    @Override
+    public Double visitToRefrig(@NotNull svetParser.ToRefrigContext ctx) {
+        return (visit(ctx.kolvoVat())*visit(ctx.amount()))*visit(ctx.rab());
+    }
+
+    @Override
+    public Double visitToTel(@NotNull svetParser.ToTelContext ctx) {
+        return (visit(ctx.kolvoVat())*visit(ctx.amount()))*visit(ctx.rab());
     }
 }

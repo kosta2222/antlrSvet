@@ -3,7 +3,7 @@ options{
 language=Java;
 }
 input:svet;
-svet: 'svet' ':' ((lamp)? (comp)?) rub n;
+svet: 'svet' ':' ((lamp)? (comp)? (refrig)? (telic)? ) rub n;
 
 lamp: 'lamp' '('kolvoVat ',' amount ')''['rab']' #ToLamp
 ;

@@ -86,6 +86,9 @@ public class svetParser extends Parser {
 	}
 
 	public static class SvetContext extends ParserRuleContext {
+		public TelicContext telic() {
+			return getRuleContext(TelicContext.class,0);
+		}
 		public LampContext lamp() {
 			return getRuleContext(LampContext.class,0);
 		}
@@ -97,6 +100,9 @@ public class svetParser extends Parser {
 		}
 		public NContext n() {
 			return getRuleContext(NContext.class,0);
+		}
+		public RefrigContext refrig() {
+			return getRuleContext(RefrigContext.class,0);
 		}
 		public SvetContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -135,9 +141,25 @@ public class svetParser extends Parser {
 				}
 			}
 
+			setState(35);
+			_la = _input.LA(1);
+			if (_la==12) {
+				{
+				setState(34); refrig();
+				}
 			}
-			setState(34); rub();
-			setState(35); n();
+
+			setState(38);
+			_la = _input.LA(1);
+			if (_la==1) {
+				{
+				setState(37); telic();
+				}
+			}
+
+			}
+			setState(40); rub();
+			setState(41); n();
 			}
 		}
 		catch (RecognitionException re) {
@@ -187,15 +209,15 @@ public class svetParser extends Parser {
 			_localctx = new ToLampContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(37); match(11);
-			setState(38); match(8);
-			setState(39); kolvoVat();
-			setState(40); match(13);
-			setState(41); amount();
-			setState(42); match(10);
-			setState(43); match(5);
-			setState(44); rab();
-			setState(45); match(7);
+			setState(43); match(11);
+			setState(44); match(8);
+			setState(45); kolvoVat();
+			setState(46); match(13);
+			setState(47); amount();
+			setState(48); match(10);
+			setState(49); match(5);
+			setState(50); rab();
+			setState(51); match(7);
 			}
 		}
 		catch (RecognitionException re) {
@@ -245,15 +267,15 @@ public class svetParser extends Parser {
 			_localctx = new ToCompContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(47); match(9);
-			setState(48); match(8);
-			setState(49); kolvoVat();
-			setState(50); match(13);
-			setState(51); amount();
-			setState(52); match(10);
-			setState(53); match(5);
-			setState(54); rab();
-			setState(55); match(7);
+			setState(53); match(9);
+			setState(54); match(8);
+			setState(55); kolvoVat();
+			setState(56); match(13);
+			setState(57); amount();
+			setState(58); match(10);
+			setState(59); match(5);
+			setState(60); rab();
+			setState(61); match(7);
 			}
 		}
 		catch (RecognitionException re) {
@@ -303,15 +325,15 @@ public class svetParser extends Parser {
 			_localctx = new ToRefrigContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57); match(12);
-			setState(58); match(8);
-			setState(59); kolvoVat();
-			setState(60); match(13);
-			setState(61); amount();
-			setState(62); match(10);
-			setState(63); match(5);
-			setState(64); rab();
-			setState(65); match(7);
+			setState(63); match(12);
+			setState(64); match(8);
+			setState(65); kolvoVat();
+			setState(66); match(13);
+			setState(67); amount();
+			setState(68); match(10);
+			setState(69); match(5);
+			setState(70); rab();
+			setState(71); match(7);
 			}
 		}
 		catch (RecognitionException re) {
@@ -361,15 +383,15 @@ public class svetParser extends Parser {
 			_localctx = new ToTelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(67); match(1);
-			setState(68); match(8);
-			setState(69); kolvoVat();
-			setState(70); match(13);
-			setState(71); amount();
-			setState(72); match(10);
-			setState(73); match(5);
-			setState(74); rab();
-			setState(75); match(7);
+			setState(73); match(1);
+			setState(74); match(8);
+			setState(75); kolvoVat();
+			setState(76); match(13);
+			setState(77); amount();
+			setState(78); match(10);
+			setState(79); match(5);
+			setState(80); rab();
+			setState(81); match(7);
 			}
 		}
 		catch (RecognitionException re) {
@@ -413,9 +435,9 @@ public class svetParser extends Parser {
 			_localctx = new ToRubContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(77); match(3);
-			setState(78); match(6);
-			setState(79); atom();
+			setState(83); match(3);
+			setState(84); match(6);
+			setState(85); atom();
 			}
 		}
 		catch (RecognitionException re) {
@@ -459,9 +481,9 @@ public class svetParser extends Parser {
 			_localctx = new ToNContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(81); match(14);
-			setState(82); match(6);
-			setState(83); atom();
+			setState(87); match(14);
+			setState(88); match(6);
+			setState(89); atom();
 			}
 		}
 		catch (RecognitionException re) {
@@ -505,7 +527,7 @@ public class svetParser extends Parser {
 			_localctx = new ToKolVatContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(85); atom();
+			setState(91); atom();
 			}
 		}
 		catch (RecognitionException re) {
@@ -549,7 +571,7 @@ public class svetParser extends Parser {
 			_localctx = new ToAmountContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87); atom();
+			setState(93); atom();
 			}
 		}
 		catch (RecognitionException re) {
@@ -593,7 +615,7 @@ public class svetParser extends Parser {
 			_localctx = new ToRabContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(89); atom();
+			setState(95); atom();
 			}
 		}
 		catch (RecognitionException re) {
@@ -641,20 +663,20 @@ public class svetParser extends Parser {
 		AtomContext _localctx = new AtomContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_atom);
 		try {
-			setState(93);
+			setState(99);
 			switch (_input.LA(1)) {
 			case INT:
 				_localctx = new ToIntContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(91); match(INT);
+				setState(97); match(INT);
 				}
 				break;
 			case DOUBLE:
 				_localctx = new ToDoubleContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(92); match(DOUBLE);
+				setState(98); match(DOUBLE);
 				}
 				break;
 			default:
@@ -673,28 +695,30 @@ public class svetParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\24b\4\2\t\2\4\3\t"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\24h\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
-		"\f\t\f\4\r\t\r\3\2\3\2\3\3\3\3\3\3\5\3 \n\3\3\3\5\3#\n\3\3\3\3\3\3\3\3"+
-		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
-		"\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3"+
-		"\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\n\3\n\3\13\3\13\3"+
-		"\f\3\f\3\r\3\r\5\r`\n\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\2X"+
-		"\2\32\3\2\2\2\4\34\3\2\2\2\6\'\3\2\2\2\b\61\3\2\2\2\n;\3\2\2\2\fE\3\2"+
-		"\2\2\16O\3\2\2\2\20S\3\2\2\2\22W\3\2\2\2\24Y\3\2\2\2\26[\3\2\2\2\30_\3"+
-		"\2\2\2\32\33\5\4\3\2\33\3\3\2\2\2\34\35\7\4\2\2\35\37\7\6\2\2\36 \5\6"+
-		"\4\2\37\36\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!#\5\b\5\2\"!\3\2\2\2\"#\3\2"+
-		"\2\2#$\3\2\2\2$%\5\16\b\2%&\5\20\t\2&\5\3\2\2\2\'(\7\r\2\2()\7\n\2\2)"+
-		"*\5\22\n\2*+\7\17\2\2+,\5\24\13\2,-\7\f\2\2-.\7\7\2\2./\5\26\f\2/\60\7"+
-		"\t\2\2\60\7\3\2\2\2\61\62\7\13\2\2\62\63\7\n\2\2\63\64\5\22\n\2\64\65"+
-		"\7\17\2\2\65\66\5\24\13\2\66\67\7\f\2\2\678\7\7\2\289\5\26\f\29:\7\t\2"+
-		"\2:\t\3\2\2\2;<\7\16\2\2<=\7\n\2\2=>\5\22\n\2>?\7\17\2\2?@\5\24\13\2@"+
-		"A\7\f\2\2AB\7\7\2\2BC\5\26\f\2CD\7\t\2\2D\13\3\2\2\2EF\7\3\2\2FG\7\n\2"+
-		"\2GH\5\22\n\2HI\7\17\2\2IJ\5\24\13\2JK\7\f\2\2KL\7\7\2\2LM\5\26\f\2MN"+
-		"\7\t\2\2N\r\3\2\2\2OP\7\5\2\2PQ\7\b\2\2QR\5\30\r\2R\17\3\2\2\2ST\7\20"+
-		"\2\2TU\7\b\2\2UV\5\30\r\2V\21\3\2\2\2WX\5\30\r\2X\23\3\2\2\2YZ\5\30\r"+
-		"\2Z\25\3\2\2\2[\\\5\30\r\2\\\27\3\2\2\2]`\7\21\2\2^`\7\22\2\2_]\3\2\2"+
-		"\2_^\3\2\2\2`\31\3\2\2\2\5\37\"_";
+		"\f\t\f\4\r\t\r\3\2\3\2\3\3\3\3\3\3\5\3 \n\3\3\3\5\3#\n\3\3\3\5\3&\n\3"+
+		"\3\3\5\3)\n\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5"+
+		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
+		"\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t"+
+		"\3\t\3\t\3\n\3\n\3\13\3\13\3\f\3\f\3\r\3\r\5\rf\n\r\3\r\2\2\16\2\4\6\b"+
+		"\n\f\16\20\22\24\26\30\2\2`\2\32\3\2\2\2\4\34\3\2\2\2\6-\3\2\2\2\b\67"+
+		"\3\2\2\2\nA\3\2\2\2\fK\3\2\2\2\16U\3\2\2\2\20Y\3\2\2\2\22]\3\2\2\2\24"+
+		"_\3\2\2\2\26a\3\2\2\2\30e\3\2\2\2\32\33\5\4\3\2\33\3\3\2\2\2\34\35\7\4"+
+		"\2\2\35\37\7\6\2\2\36 \5\6\4\2\37\36\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!#"+
+		"\5\b\5\2\"!\3\2\2\2\"#\3\2\2\2#%\3\2\2\2$&\5\n\6\2%$\3\2\2\2%&\3\2\2\2"+
+		"&(\3\2\2\2\')\5\f\7\2(\'\3\2\2\2()\3\2\2\2)*\3\2\2\2*+\5\16\b\2+,\5\20"+
+		"\t\2,\5\3\2\2\2-.\7\r\2\2./\7\n\2\2/\60\5\22\n\2\60\61\7\17\2\2\61\62"+
+		"\5\24\13\2\62\63\7\f\2\2\63\64\7\7\2\2\64\65\5\26\f\2\65\66\7\t\2\2\66"+
+		"\7\3\2\2\2\678\7\13\2\289\7\n\2\29:\5\22\n\2:;\7\17\2\2;<\5\24\13\2<="+
+		"\7\f\2\2=>\7\7\2\2>?\5\26\f\2?@\7\t\2\2@\t\3\2\2\2AB\7\16\2\2BC\7\n\2"+
+		"\2CD\5\22\n\2DE\7\17\2\2EF\5\24\13\2FG\7\f\2\2GH\7\7\2\2HI\5\26\f\2IJ"+
+		"\7\t\2\2J\13\3\2\2\2KL\7\3\2\2LM\7\n\2\2MN\5\22\n\2NO\7\17\2\2OP\5\24"+
+		"\13\2PQ\7\f\2\2QR\7\7\2\2RS\5\26\f\2ST\7\t\2\2T\r\3\2\2\2UV\7\5\2\2VW"+
+		"\7\b\2\2WX\5\30\r\2X\17\3\2\2\2YZ\7\20\2\2Z[\7\b\2\2[\\\5\30\r\2\\\21"+
+		"\3\2\2\2]^\5\30\r\2^\23\3\2\2\2_`\5\30\r\2`\25\3\2\2\2ab\5\30\r\2b\27"+
+		"\3\2\2\2cf\7\21\2\2df\7\22\2\2ec\3\2\2\2ed\3\2\2\2f\31\3\2\2\2\7\37\""+
+		"%(e";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
